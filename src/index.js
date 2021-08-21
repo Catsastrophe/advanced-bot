@@ -1,6 +1,9 @@
 const fs = require('fs');
+const config = require('../config');
+const Meme = require("memer-api");
 const colour = require('colour');
 const { Client, Intents, Collection } = require('discord.js');
+
 const client = new Client({
 	intents:[Intents.FLAGS.GUILDS],
 	presence: {
@@ -9,10 +12,13 @@ const client = new Client({
 			name: 'with slash commands',
 			type: 'PLAYING'
 		}
-	}
+	},
+	shards: "auto",
+    disableEveryone: true
 });
 
 client.commands = new Collection();
+client.memer = new Meme(config.apis.memer);
 
 require('dotenv').config();
 
