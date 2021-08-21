@@ -1,6 +1,6 @@
 const fs = require('fs');
 const config = require('../config');
-const Meme = require("memer-api");
+const Meme = require('memer-api');
 const colour = require('colour');
 const { Client, Intents, Collection } = require('discord.js');
 
@@ -13,8 +13,8 @@ const client = new Client({
 			type: 'PLAYING'
 		}
 	},
-	shards: "auto",
-    disableEveryone: true
+	shards: 'auto',
+	disableEveryone: true
 });
 
 client.commands = new Collection();
