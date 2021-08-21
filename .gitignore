@@ -106,3 +106,4 @@ dist
 # Configuration Files
 ./config.js
 ./.env
+config.js
