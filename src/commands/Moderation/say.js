@@ -21,7 +21,7 @@ module.exports = {
 		let title = interaction.options.getString('title');
 		let channel = interaction.options.getChannel('channel');
         
-		if (!say) return interaction.reply('**❌ | You need to provide something to say.**');
+		if (!say) return interaction.reply({content: '**❌ | You need to provide something to say.**', ephmeral: true});
 		else emb.setDescription(say);
 
 		if (title) emb.setTitle(title);
@@ -30,7 +30,7 @@ module.exports = {
 		} else {
 			channel.send({embeds: [emb]});
 		}
-		return await interaction.reply('Message sent');
+		return await interaction.reply({content: 'Message sent', ephmeral: true});
 	}
 };
 
