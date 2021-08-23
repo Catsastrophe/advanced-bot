@@ -55,11 +55,3 @@ client.distube
     .on("searchCancel", message => message.channel.send(` | Searching canceled`))
     .on("error", (message, err) => message.channel.send(` | An error encountered: ${err}`))
 
-/*
-
-> Coded by Lorne#0211
-> https://discord.gg/bUMcVASrJM
-> https://twitter.com/Lorne_Booker
-> https://github.com/lornebookerr
-
-*/
