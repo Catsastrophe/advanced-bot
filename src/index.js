@@ -3,7 +3,7 @@ const DisTube = require("distube");
 const config = require('../config');
 const Meme = require('memer-api');
 const colour = require('colour');
-const { Client, Intents, Collection } = require('discord.js');
+const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
 
 const client = new Client({
 	intents:[Intents.FLAGS.GUILDS],
@@ -40,25 +40,34 @@ const commandFolders = fs.readdirSync('./src/commands');
 })();
 
 client.distube
-	.on('playSong', (message,queue,song) => {
-
+	.on('playSong', (interation,queue,song) => {
+		var playingEmbed = new MessageEmbed()
+			.setTitle(`${song.title}`)
+			.addField(`Duration:`, `**\`${song.formattedDuration}\`**`, true)
+			.addField(`Views:`, `**\`${song.views}\`**`, true)
+			.addField(`Link:`, `[\`CLICK HERE\`](${song.url})`, true)
+			.setAuthor(song.user.tag, song.user.displayAvatarURL())
+			.setTimestamp()
+			.setThumbnail(song.thumbnail)
+		
+		interation.channel.send({embeds: [playingEmbed]})
 	})
-	.on('addSong', (message,queue,song) => {
+	.on('addSong', (interation,queue,song) => {
 		
 	})
-	.on('playList', (message,queue,song) => {
+	.on('playList', (interation,queue,song) => {
 		
 	})
-	.on('addList', (message,queue,song) => {
+	.on('addList', (interation,queue,song) => {
 		
 	})
-	.on('searchResult', (message,queue,song) => {
+	.on('searchResult', (interation,queue,song) => {
 		
 	})
-	.on('searchCancel', (message,queue,song) => {
+	.on('searchCancel', (interation,queue,song) => {
 		
 	})
-	.on('error', (message,queue,song) => {
+	.on('error', (interation,queue,song) => {
 		
 	})
 
