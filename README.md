@@ -30,5 +30,5 @@ A slash command and event handler for the new discord.js V13 update. Includes so
 * `config.embeds.embedColour` - The default colour for an embed if none is specified
 * `config.embeds.embedFooterText` - The default footer text for an embed
 
-## Credits
-This project is licensed by the **GNU General Public License**. You must give credit to [me](https://github.com/lornebookerr) when using this code.
+<!-- ## Credits
+This project is licensed by the **GNU General Public License**. You must give credit to [me](https://github.com/lornebookerr) when using this code. -->
