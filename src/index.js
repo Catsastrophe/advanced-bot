@@ -2,6 +2,8 @@ const fs = require('fs');
 const config = require('../config');
 const Meme = require('memer-api');
 const colour = require('colour');
+const db = require('quick.db');
+var Chance = require('chance');
 const { Player } = require('discord-player');
 const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
 
@@ -20,6 +22,11 @@ const client = new Client({
 
 client.commands = new Collection();
 client.memer = new Meme(config.apis.memer);
+client.db = db;
+client.talkedRecently = new Set();
+client.dailyCooldown = new Set();
+client.weeklyCooldown = new Set();
+client.chance = new Chance();
 
 require('dotenv').config();
 
