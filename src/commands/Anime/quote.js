@@ -34,8 +34,6 @@ module.exports = {
         //   console.log(quotes);
           quote = quotes[0];
           let emb = new MessageEmbed()
-            // .setTitle(`${res.englishTitle} (${res.japaneseTitle})`)
-            // .setThumbnail(res.picture)
             .addField("Anime", `${quote.anime}`, true)
             .addField("Character", `${quote.character}`, true)
             .addField("Quote", `${quote.quote}`, false)
@@ -56,8 +54,6 @@ module.exports = {
         //   console.log(quotes);
           quote = quotes[0];
           let emb = new MessageEmbed()
-            // .setTitle(`${res.englishTitle} (${res.japaneseTitle})`)
-            // .setThumbnail(res.picture)
             .addField("Anime", `${quote.anime}`, true)
             .addField("Character", `${quote.character}`, true)
             .addField("Quote", `${quote.quote}`, false)
