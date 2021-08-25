@@ -30,10 +30,10 @@ module.exports = {
       });
     } else {
       if (user) {
-        client.db.set(`${interaction.member.id}_balance`, amount);
+        client.db.set(`${user.id}_balance`, amount);
         let emb = new MessageEmbed()
           .setDescription(
-            `Set **${user.name}**'s balance to **\`${amount}\`**.\n${user.name} now has **\`${client.db.get(
+            `Set **${user.tag}**'s balance to **\`${amount}\`**.\n${user.tag} now has **\`${client.db.get(
               `${user.id}_balance`
             )}\`** in their bank.`
           )
