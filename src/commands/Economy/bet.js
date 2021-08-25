@@ -7,7 +7,7 @@ module.exports = {
     data: new SlashCommandBuilder()
     .setName("bet")
     .addIntegerOption(option => option.setName('amount').setDescription('The amount you want to bet.').setRequired(true))
-    .setDescription("Check your balance."),
+    .setDescription("Gamble your money."),
     async execute(interaction, client) {
 		const amount = interaction.options.getInteger('amount');
         let balance = client.db.get(`${interaction.member.id}_balance`);

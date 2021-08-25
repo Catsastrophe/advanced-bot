@@ -23,10 +23,16 @@ module.exports = {
       return interaction.reply({ embeds: [emb] });
     } else {
       balance = client.db.get(`${user.id}_balance`);
+      if (balance === null) {
+        client.db.set(`${user.id}_balance`, 0);
+      }
       let emb = new MessageEmbed()
-        .setDescription(`${user.name} currently has **\`${balance}\`** in their bank`)
+        .setDescription(
+          `${user.tag} currently has **\`${client.db.get(`${user.id}_balance`)}\`** in their bank`
+        )
         .setColor("AQUA");
       return interaction.reply({ embeds: [emb] });
+     
     }
   },
 };

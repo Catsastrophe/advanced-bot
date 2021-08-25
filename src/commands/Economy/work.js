@@ -30,7 +30,7 @@ module.exports = {
             client.db.set(`${interaction.member.id}_balance`, balance + num);
 
             let emb = new MessageEmbed()
-                .setDescription(`You worked as a ${client.chance.profession()} and made **\`${num}\`**.\nYou now have **\`${client.db.get(`${interaction.member.id}_balance`)}\`** in your bank.\nYou have worked a total of **\`${client.db.get(`${interaction.member.id}_work_hours`)}\`** hours.`)
+                .setDescription(`You worked as a **${client.chance.profession()}** and made **\`${num}\`**.\nYou now have **\`${client.db.get(`${interaction.member.id}_balance`)}\`** in your bank.\nYou have worked a total of **\`${client.db.get(`${interaction.member.id}_work_hours`)}\`** hours.`)
                 .setColor("GREEN")
             interaction.reply({embeds: [emb]})
 

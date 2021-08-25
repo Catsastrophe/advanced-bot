@@ -34,7 +34,7 @@ module.exports = {
         client.db.set(`${interaction.member.id}_balance`, balance + amount);
         let emb = new MessageEmbed()
           .setDescription(
-            `Added **\`${amount}\`**.\n${user.name} now has **\`${client.db.get(
+            `Added **\`${amount}\`**.\n${user.tag} now has **\`${client.db.get(
               `${user.id}_balance`
             )}\`** in their bank.`
           )
