@@ -23,9 +23,15 @@ const client = new Client({
 client.commands = new Collection();
 client.memer = new Meme(config.apis.memer);
 client.db = db;
+
+// cooldowns
 client.talkedRecently = new Set();
 client.dailyCooldown = new Set();
 client.weeklyCooldown = new Set();
+client.crimeCooldown = new Set();
+client.fishCooldown = new Set();
+client.monthlyCooldown = new Set();
+
 client.chance = new Chance();
 
 require('dotenv').config();
