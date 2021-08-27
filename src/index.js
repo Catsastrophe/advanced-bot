@@ -6,6 +6,7 @@ const db = require('quick.db');
 var Chance = require('chance');
 const { Player } = require('discord-player');
 const { Client, Intents, Collection, MessageEmbed } = require('discord.js');
+const { DiscordTogether } = require('discord-together');
 
 const client = new Client({
 	intents:[ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES ],
@@ -22,6 +23,7 @@ const client = new Client({
 
 client.commands = new Collection();
 client.memer = new Meme(config.apis.memer);
+client.discordTogether = new DiscordTogether(client);
 client.db = db;
 
 // cooldowns
