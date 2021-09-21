@@ -24,10 +24,21 @@ module.exports = (client) => {
 		(async () => {
 			try {
 				console.log('Started refreshing application (/) commands.'.blue);
-
-				await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
-					body: client.commandArray,
-				});
+				if (config.slash.global == true) {
+					await rest.put(Routes.applicationCommands(clientId), {
+						body: client.commandArray,
+					});
+					console.log(`Loaded commands globally, (expect delay pushing commands)`.red.bold)
+				} else {
+					if (config.general.clientid && config.general.guildid) {
+						await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+							body: client.commandArray,
+						});
+					} else {
+						console.log(`You need to provide a GUILD id and CLIENT id`.red.bold)
+					}
+				}
+				
 
 				console.log('Successfully reloaded application (/) commands.'.green.bold);
 			} catch (error) {
