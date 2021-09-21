@@ -1,0 +1,26 @@
+var config = module.exports = {};
+config.general = {};
+config.settings = {};
+config.slash = {};
+config.support = {};
+config.embeds = {};
+
+// General settings
+config.general.botName = 'Command Handler Template';
+config.general.guildid = '';
+config.general.clientid = '';
+
+// Slash command handling
+/* If set to true, commands will be deployed globally, however there will be some delay with commands being pushed (this is normal) */
+config.slash.global = false;
+
+// Settings
+config.settings.owners = [];
+
+// Support Server
+config.support.guildid = '';
+config.support.owner = '';
+
+// Embeds Settings
+config.embeds.embedColour = 'FFFFFF';
+config.embeds.embedFooterText = 'Developed by Lorne#0211';
